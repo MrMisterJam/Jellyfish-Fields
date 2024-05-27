@@ -13,6 +13,9 @@ public abstract class Jogador extends Actor
     private int stunDuration = 2000; // duração do stun em milissegundos
     int velocidade = 3;
     int velocidadeBase = 3;
+    int pontos = 1;
+    int pontosBase = 1;
+    int oculosDuracao = 0, oculosTempoDecorrido = 0;
     int boostDuracao = 0, boostTempoDecorrido = 0;
     static boolean walking = false;
     GreenfootSound walkSound = new GreenfootSound("WalkingSound.mp3");
@@ -35,14 +38,20 @@ public abstract class Jogador extends Actor
         idle();
         if (isTouching(Jellyfish.class)) {
             removeTouching(Jellyfish.class);
-            aumentarPontos(1);
+            aumentarPontos(pontos);
         }
         if (isTouching(BlueJellyfish.class)) {
             removeTouching(BlueJellyfish.class);
-            aumentarPontos(3);
+            aumentarPontos(pontos * 3);
         }
         if (boostTempoDecorrido < boostDuracao) {
             boostTempoDecorrido++;
+        }
+        if (oculosTempoDecorrido < oculosDuracao) {
+            oculosTempoDecorrido++;
+        }
+        if (oculosTempoDecorrido >= oculosDuracao) {
+            pontos = pontosBase;
         }
         movimentacao();
         checkWalking();
@@ -71,5 +80,10 @@ public abstract class Jogador extends Actor
         velocidade += boost;
         boostDuracao = duracao;
         boostTempoDecorrido = 0;
+    }
+    public void duplicarPontos(int duracao) {
+        pontos *= 2;
+        oculosDuracao = duracao;
+        oculosTempoDecorrido = 0;
     }
 }

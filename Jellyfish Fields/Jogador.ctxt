@@ -18,4 +18,6 @@ comment7.params=
 comment7.target=void\ showHitAnimation()
 comment8.params=boost\ duracao
 comment8.target=void\ aumentarVelocidade(int,\ int)
-numComments=9
+comment9.params=duracao
+comment9.target=void\ duplicarPontos(int)
+numComments=10

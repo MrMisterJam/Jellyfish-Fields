@@ -7,8 +7,8 @@ public class Squidward extends Actor {
     private int speed = 1; // velocidade de movimento
     private boolean movingIn; // flag para indicar se está se movendo para dentro
     private int bubbleCooldown = 0;
-private final int bubbleCooldownTime = 250; // Tempo de cooldown em atos (ajuste conforme necessário)
-GreenfootSound MoveInSound = new GreenfootSound("squidward-walking-sound.mp3");
+    private final int bubbleCooldownTime = 250; // Tempo de cooldown em atos (ajuste conforme necessário)
+    GreenfootSound MoveInSound = new GreenfootSound("squidward-walking-sound.mp3");
     public Squidward(int duration) {
         this.duration = duration;
         this.movingIn = true;

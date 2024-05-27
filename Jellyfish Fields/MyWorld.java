@@ -37,6 +37,7 @@ public class MyWorld extends World
         Contagem.setFontSize(100);
         Contagem.setValue(180);
         addObject(Contagem, 683, 50);
+        setPaintOrder(Counter.class, Jogador.class, KrabbyPatty.class, Glasses.class, Bubble.class, Jellyfish.class, BlueJellyfish.class, SquidwardHouse.class, KingJellyfish.class);
     }
     
     /**
@@ -62,7 +63,7 @@ public class MyWorld extends World
         timerJ++;
         timerBJ++;
         contador++;
-        
+        definirJellyfishCooldown();
         if (timerJ >= JellyfishIntervalo) {
             Jellyfish jellyfish = new Jellyfish();
             generateActor(jellyfish);
@@ -80,7 +81,12 @@ public class MyWorld extends World
 
             if (Greenfoot.getRandomNumber(10000) < 5) { // Ajuste a probabilidade conforme necessário
                 SquidwardEvent();
-                
+            }
+            if (Greenfoot.getRandomNumber(7500) < 5) {
+                gerarOculos();
+            }
+            if (Greenfoot.getRandomNumber(10000) < 5) {
+                KingJellyfishEvent();
             }
         
         // Verifica se é hora de gerar um novo Krabby Patty
@@ -177,5 +183,27 @@ private void SquidwardEvent() {
         int x = Greenfoot.getRandomNumber(getWidth() - 400) + 200;  // Posição aleatória no eixo X
         int y = 0;  // Começa no topo do mundo
         addObject(krabbyPatty, x, y);  // Adiciona o Krabby Patty ao mundo
+    }
+    private void gerarOculos() {
+        Glasses oculos = new Glasses();
+        int x = Greenfoot.getRandomNumber(getWidth() - 400) + 200;  // Posição aleatória no eixo X
+        int y = 0;  // Começa no topo do mundo
+        addObject(oculos, x, y);
+    }
+    private void KingJellyfishEvent() {
+        
+        if (getObjects(KingJellyfish.class).isEmpty()) {
+           KingJellyfish king = new KingJellyfish(15000);
+           addObject(king, getWidth(), getHeight());
+        }
+    }
+    private void definirJellyfishCooldown() {
+        if (getObjects(KingJellyfish.class).isEmpty()) {
+           JellyfishIntervalo = 200;
+           BlueJellyfishIntervalo = 600;
+        } else {
+            JellyfishIntervalo = 100;
+            BlueJellyfishIntervalo = 300;
+        }
     }
 }

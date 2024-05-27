@@ -16,17 +16,13 @@ public class Menu extends World
     public Menu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(1024, 900, 1); 
         prepare();
     }
     
     private void prepare() {
-        // Adicione botões ou outros elementos do menu aqui
-        
 
-        
         StartButton startButton = new StartButton();
-        addObject(startButton,286,332);
-        startButton.setLocation(298,342);
+        addObject(startButton,512,782);
     }
 }

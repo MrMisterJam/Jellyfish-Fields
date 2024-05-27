@@ -9,7 +9,7 @@ public class Bubble extends Actor {
 
     public Bubble() {
         horizontalSpeed = 2; // Ajuste a velocidade horizontal conforme necessário
-        verticalAmplitude = 5; // Ajuste a amplitude vertical conforme necessário
+        verticalAmplitude = 6; // Ajuste a amplitude vertical conforme necessário
         verticalFrequency = 0.5; // Ajuste a frequência vertical conforme necessário
         verticalPhase = Greenfoot.getRandomNumber(360); // Fase inicial aleatória
         creationTime = System.currentTimeMillis();
