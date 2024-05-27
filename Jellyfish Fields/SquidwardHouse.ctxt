@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=SquidwardHouse
+comment1.params=duration
+comment1.target=SquidwardHouse(int)
+comment2.params=world
+comment2.target=void\ addedToWorld(greenfoot.World)
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ moveDown()
+comment5.params=
+comment5.target=int\ shakeOffset()
+comment6.params=
+comment6.target=void\ checkCollisions()
+comment7.params=jogador
+comment7.target=void\ repelJogador(Jogador)
+numComments=8

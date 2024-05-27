@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Counter
+comment1.params=text\ cor
+comment1.target=Counter(java.lang.String,\ greenfoot.Color)
+comment2.params=
+comment2.target=void\ updateImage()
+comment3.params=valor
+comment3.target=void\ aumentar(int)
+comment4.params=
+comment4.target=void\ decrement()
+comment5.params=newValue
+comment5.target=void\ setValue(int)
+comment6.params=
+comment6.target=int\ getValue()
+comment7.params=tamanho
+comment7.target=void\ setFontSize(int)
+numComments=8

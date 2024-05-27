@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Bubble
+comment1.params=
+comment1.target=Bubble()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ checkCollisions()
+comment4.params=jogador
+comment4.target=void\ repelJogador(Jogador)
+numComments=5
