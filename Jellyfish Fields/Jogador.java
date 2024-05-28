@@ -10,7 +10,7 @@ public abstract class Jogador extends Actor
 {
     private boolean stunned;
     private long stunStartTime;
-    private int stunDuration = 2000; // duração do stun em milissegundos
+    private int stunDuration = 1500; // duração do stun em milissegundos
     int velocidade = 3;
     int velocidadeBase = 3;
     int pontos = 1;

@@ -16,7 +16,7 @@ public class Fim extends World
     public Fim(Actor vencedor)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(1366, 768, 1);
         if (vencedor != null) {
         if (vencedor instanceof SpongeBob) {
             bobganhou();
@@ -29,7 +29,9 @@ public class Fim extends World
     }
     
     public void act() {
-        setBackground( GIF.getCurrentImage() );
+        GreenfootImage imagem = new GreenfootImage(GIF.getCurrentImage());
+        imagem.scale(1366, 768);
+        setBackground(imagem);
     }
     
     void bobganhou() {

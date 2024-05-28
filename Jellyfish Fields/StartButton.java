@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class StartButton extends Actor {
 
     public StartButton() {
-        GreenfootImage image = new GreenfootImage("Iniciar", 24, Color.WHITE, Color.BLACK);
+        GreenfootImage image = new GreenfootImage("Iniciar", 48, Color.WHITE, Color.BLACK);
         setImage(image);
     }
 

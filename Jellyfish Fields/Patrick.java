@@ -22,19 +22,19 @@ public class Patrick extends Jogador
     }
     
     void movimentacao() {
-        if (Greenfoot.isKeyDown("d") ) {
-            move(velocidade);
-            setImage( Walk.getCurrentImage() );
-        }
+        
         if (Greenfoot.isKeyDown("w") ) {
             setLocation(getX(), getY() - velocidade);
             setImage( Walk.getCurrentImage() );
-        }
+        } else
         if (Greenfoot.isKeyDown("s") ) {
             setLocation(getX(), getY() + velocidade);
             setImage( Walk.getCurrentImage() );
         }
-        if (Greenfoot.isKeyDown("a") ) {
+        if (Greenfoot.isKeyDown("d") ) {
+            move(velocidade);
+            setImage( Walk.getCurrentImage() );
+        } else if (Greenfoot.isKeyDown("a") ) {
             move(-(velocidade));
             setImage( WalkL.getCurrentImage() );
         }

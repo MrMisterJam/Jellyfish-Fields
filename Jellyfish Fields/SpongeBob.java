@@ -24,19 +24,19 @@ public class SpongeBob extends Jogador
     }
     
     void movimentacao() {
-        if (Greenfoot.isKeyDown("right") ) {
-            move(velocidade);
-            setImage( Walk.getCurrentImage() );
-        }
+        
         if (Greenfoot.isKeyDown("up") ) {
             setLocation(getX(), getY() - velocidade);
             setImage( Walk.getCurrentImage() );
-        }
+        } else
         if (Greenfoot.isKeyDown("down") ) {
             setLocation(getX(), getY() + velocidade);
             setImage( Walk.getCurrentImage() );
         }
-        if (Greenfoot.isKeyDown("left") ) {
+        if (Greenfoot.isKeyDown("right") ) {
+            move(velocidade);
+            setImage( Walk.getCurrentImage() );
+        } else if (Greenfoot.isKeyDown("left") ) {
             move(-(velocidade));
             setImage( WalkL.getCurrentImage() );
         }

@@ -76,12 +76,12 @@ public class MyWorld extends World
         }
         // Código para adicionar o SpecialActor
         if (Greenfoot.getRandomNumber(10000) < 5) { // Chance aleatória de aparecer (ajuste conforme necessário)
-    SquidwardHouseEvent();
-}
+        SquidwardHouseEvent();
+        }
 
-            if (Greenfoot.getRandomNumber(10000) < 5) { // Ajuste a probabilidade conforme necessário
+        if (Greenfoot.getRandomNumber(10000) < 5) { // Ajuste a probabilidade conforme necessário
                 SquidwardEvent();
-            }
+        }
             if (Greenfoot.getRandomNumber(7500) < 5) {
                 gerarOculos();
             }
@@ -129,9 +129,9 @@ public class MyWorld extends World
 
     // Método para verificar colisões em uma posição específica
     private boolean checkCollisionAt(Actor ator, int x, int y) {
-        List<Actor> objects = getObjects(Actor.class);
-        for (Actor obj : objects) {
-            if (obj != ator && areActorsColliding(obj, ator, x, y)) {
+        List<Jogador> jogadores = getObjects(Jogador.class);
+        for (Actor jogador : jogadores) {
+            if (jogador != ator && areActorsColliding(jogador, ator, x, y)) {
                 return true;
             }
         }
@@ -202,7 +202,7 @@ private void SquidwardEvent() {
            JellyfishIntervalo = 200;
            BlueJellyfishIntervalo = 600;
         } else {
-            JellyfishIntervalo = 100;
+            JellyfishIntervalo = 50;
             BlueJellyfishIntervalo = 300;
         }
     }
