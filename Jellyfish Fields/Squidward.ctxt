@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Squidward
+comment0.text=\r\n\ A\ classe\ Squidward\ representa\ o\ personagem\ Squidward\ que\ entra\ no\ jogo\ e\ solta\ bolhas.\r\n\ Ele\ se\ move\ para\ dentro\ da\ tela\ e,\ ap\u00F3s\ um\ tempo,\ solta\ bolhas\ que\ atordoam\ o\ jogador.\r\n\ \r\n\ @autor\ SeuNome\r\n\ @vers\u00E3o\ DataOuVers\u00E3o\r\n
 comment1.params=duration
 comment1.target=Squidward(int)
 comment2.params=world

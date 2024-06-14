@@ -1,15 +1,19 @@
 #BlueJ class context
 comment0.target=Fim
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Fim\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Classe\ Fim\ representa\ a\ tela\ de\ fim\ de\ jogo.\r\n\ Mostra\ o\ resultado\ do\ jogo\ e\ uma\ anima\u00E7\u00E3o\ correspondente.\r\n\ \r\n\ @autor\ SeuNome\r\n\ @vers\u00E3o\ DataOuVers\u00E3o\r\n
 comment1.params=vencedor
 comment1.target=Fim(greenfoot.Actor)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Fim.\r\n\ \r\n
+comment1.text=\r\n\ Construtor\ para\ objetos\ da\ classe\ Fim.\r\n\ \r\n\ @param\ vencedor\ O\ ator\ vencedor\ do\ jogo.\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ M\u00E9todo\ chamado\ em\ cada\ ato\ do\ jogo.\r\n\ Atualiza\ a\ imagem\ de\ fundo\ com\ a\ anima\u00E7\u00E3o.\r\n
 comment3.params=
 comment3.target=void\ bobganhou()
+comment3.text=\r\n\ Define\ a\ anima\u00E7\u00E3o\ para\ a\ vit\u00F3ria\ de\ SpongeBob.\r\n
 comment4.params=
 comment4.target=void\ patrickganhou()
+comment4.text=\r\n\ Define\ a\ anima\u00E7\u00E3o\ para\ a\ vit\u00F3ria\ de\ Patrick.\r\n
 comment5.params=
 comment5.target=void\ empate()
+comment5.text=\r\n\ Define\ a\ anima\u00E7\u00E3o\ para\ empate.\r\n
 numComments=6

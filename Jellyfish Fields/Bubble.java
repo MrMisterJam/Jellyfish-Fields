@@ -1,5 +1,12 @@
 import greenfoot.*;
 
+/**
+ * A classe Bubble representa uma bolha que se move em um padrão sinusoidal.
+ * Quando colide com o jogador, ele é atordoado e repelido.
+ * 
+ * @autor SeuNome
+ * @versão DataOuVersão
+ */
 public class Bubble extends Actor {
     private int horizontalSpeed; // Velocidade horizontal
     private double verticalAmplitude; // Amplitude vertical
@@ -50,18 +57,18 @@ public class Bubble extends Actor {
     }
 
     private void repelJogador(Jogador jogador) {
-    int repelForce = 100; // Força com que o jogador será repelido
-    int deltaX = jogador.getX() - getX();
-    int deltaY = jogador.getY() - getY();
-    
-    int repelDirectionX = 0; // Não repelir na horizontal
-    int repelDirectionY = (deltaY >= 0) ? 1 : -1; // Repelir para baixo se deltaY for positivo, senão para cima
+        int repelForce = 100; // Força com que o jogador será repelido
+        int deltaX = jogador.getX() - getX();
+        int deltaY = jogador.getY() - getY();
+        
+        int repelDirectionX = 0; // Não repelir na horizontal
+        int repelDirectionY = (deltaY >= 0) ? 1 : -1; // Repelir para baixo se deltaY for positivo, senão para cima
 
-    // Calcula as novas posições
-    int newX = jogador.getX() + (repelDirectionX * repelForce);
-    int newY = jogador.getY() + (repelDirectionY * repelForce);
+        // Calcula as novas posições
+        int newX = jogador.getX() + (repelDirectionX * repelForce);
+        int newY = jogador.getY() + (repelDirectionY * repelForce);
 
-    // Move o jogador para a nova posição
-    jogador.setLocation(newX, newY);
-}
+        // Move o jogador para a nova posição
+        jogador.setLocation(newX, newY);
+    }
 }

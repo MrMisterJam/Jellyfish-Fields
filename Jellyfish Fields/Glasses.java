@@ -1,33 +1,32 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Glasses here.
+ * A classe Glasses representa um item que cai na tela e ao ser coletado por um jogador
+ * duplica os pontos ganhos pelo jogador por um período.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @autor SeuNome
+ * @versão DataOuVersão
  */
-public class Glasses extends Actor
-{
+public class Glasses extends Actor {
     int speed = 3;
     int duracao = 300;
-    public Glasses () {
+
+    public Glasses() {
         getImage().scale(90, 60);
     }
+
     /**
-     * Act - do whatever the Glasses wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Método act é chamado repetidamente para realizar as ações do ator.
      */
-    public void act()
-    {
+    public void act() {
         setLocation(getX(), getY() + speed);
+
         // Verifica se colidiu com um jogador
         if (isTouching(Jogador.class)) {
             Jogador jogador = (Jogador) getOneIntersectingObject(Jogador.class);
             jogador.duplicarPontos(duracao);
             getWorld().removeObject(this);
-        } else
-        // Verifica se chegou na base do mundo
-        if (getY() >= getWorld().getHeight() - 1) {
+        } else if (getY() >= getWorld().getHeight() - 1) {
             getWorld().removeObject(this);
         }
     }

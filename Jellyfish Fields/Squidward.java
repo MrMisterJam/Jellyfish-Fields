@@ -1,14 +1,22 @@
 import greenfoot.*;
 
+/**
+ * A classe Squidward representa o personagem Squidward que entra no jogo e solta bolhas.
+ * Ele se move para dentro da tela e, após um tempo, solta bolhas que atordoam o jogador.
+ * 
+ * @autor SeuNome
+ * @versão DataOuVersão
+ */
 public class Squidward extends Actor {
     private long startTime;
-    private int duration; // duração em milissegundos
-    private int targetX; // posição X alvo
-    private int speed = 1; // velocidade de movimento
-    private boolean movingIn; // flag para indicar se está se movendo para dentro
+    private int duration; // Duração em milissegundos
+    private int targetX; // Posição X alvo
+    private int speed = 1; // Velocidade de movimento
+    private boolean movingIn; // Flag para indicar se está se movendo para dentro
     private int bubbleCooldown = 0;
-    private final int bubbleCooldownTime = 250; // Tempo de cooldown em atos (ajuste conforme necessário)
-    GreenfootSound MoveInSound = new GreenfootSound("squidward-walking-sound.mp3");
+    private final int bubbleCooldownTime = 250; // Tempo de cooldown em atos
+    GreenfootSound moveInSound = new GreenfootSound("squidward-walking-sound.mp3");
+
     public Squidward(int duration) {
         this.duration = duration;
         this.movingIn = true;
@@ -37,18 +45,18 @@ public class Squidward extends Actor {
     private void moveIn() {
         if (getX() > targetX) {
             setLocation(getX() - speed, getY());
-            MoveInSound.play();
+            moveInSound.play();
         } else {
             movingIn = false;
         }
     }
 
     private void releaseBubbles() {
-    if (bubbleCooldown <= 0) {
-        getWorld().addObject(new Bubble(), getX() - getImage().getWidth() / 2, getY());
-        bubbleCooldown = bubbleCooldownTime; // Define o cooldown novamente
-    } else {
-        bubbleCooldown--; // Decrementa o cooldown
+        if (bubbleCooldown <= 0) {
+            getWorld().addObject(new Bubble(), getX() - getImage().getWidth() / 2, getY());
+            bubbleCooldown = bubbleCooldownTime; // Define o cooldown novamente
+        } else {
+            bubbleCooldown--; // Decrementa o cooldown
+        }
     }
-}
 }

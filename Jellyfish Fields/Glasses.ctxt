@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Glasses
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Glasses\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ A\ classe\ Glasses\ representa\ um\ item\ que\ cai\ na\ tela\ e\ ao\ ser\ coletado\ por\ um\ jogador\r\n\ duplica\ os\ pontos\ ganhos\ pelo\ jogador\ por\ um\ per\u00EDodo.\r\n\ \r\n\ @autor\ SeuNome\r\n\ @vers\u00E3o\ DataOuVers\u00E3o\r\n
 comment1.params=
 comment1.target=Glasses()
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Glasses\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\r\n\ M\u00E9todo\ act\ \u00E9\ chamado\ repetidamente\ para\ realizar\ as\ a\u00E7\u00F5es\ do\ ator.\r\n
 numComments=3

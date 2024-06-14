@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=Menu
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Menu\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Classe\ Menu\ representa\ o\ menu\ inicial\ do\ jogo.\r\n\ Cont\u00E9m\ o\ bot\u00E3o\ para\ iniciar\ o\ jogo.\r\n\ \r\n\ @autor\ SeuNome\r\n\ @vers\u00E3o\ DataOuVers\u00E3o\r\n
 comment1.params=
 comment1.target=Menu()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Menu.\r\n\ \r\n
+comment1.text=\r\n\ Construtor\ para\ objetos\ da\ classe\ Menu.\r\n
 comment2.params=
 comment2.target=void\ prepare()
+comment2.text=\r\n\ Prepara\ o\ menu\ inicial,\ adicionando\ os\ objetos\ necess\u00E1rios.\r\n
 numComments=3

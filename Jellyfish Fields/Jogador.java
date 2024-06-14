@@ -1,13 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Jogador here.
+ * A classe Jogador representa um jogador no jogo. É uma classe abstrata que define
+ * o comportamento comum entre os jogadores.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @autor SeuNome
+ * @versão DataOuVersão
  */
-public abstract class Jogador extends Actor
-{
+public abstract class Jogador extends Actor {
     private boolean stunned;
     private long stunStartTime;
     private int stunDuration = 1500; // duração do stun em milissegundos
@@ -20,12 +20,11 @@ public abstract class Jogador extends Actor
     static boolean walking = false;
     GreenfootSound walkSound = new GreenfootSound("WalkingSound.mp3");
     MyWorld myworld;
+
     /**
-     * Act - do whatever the Jogador wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Método act é chamado repetidamente para realizar as ações do ator.
      */
-    public final void act()
-    {
+    public final void act() {
         myworld = (MyWorld) getWorld();
         if (stunned) {
             if (System.currentTimeMillis() - stunStartTime >= stunDuration) {
@@ -66,21 +65,27 @@ public abstract class Jogador extends Actor
         walking = false;
     }
 
+    // Método para aplicar stun no jogador
     public void stun() {
         stunned = true;
         stunStartTime = System.currentTimeMillis();
         walkSound.stop();
     }
+
+    // Métodos abstratos que devem ser implementados nas subclasses
     abstract void idle();
     abstract void movimentacao();
     abstract void checkWalking();
     abstract void aumentarPontos(int pontos);
     abstract void showHitAnimation();
+
+    // Métodos para aumentar velocidade e duplicar pontos
     public void aumentarVelocidade(int boost, int duracao) {
         velocidade += boost;
         boostDuracao = duracao;
         boostTempoDecorrido = 0;
     }
+
     public void duplicarPontos(int duracao) {
         pontos *= 2;
         oculosDuracao = duracao;

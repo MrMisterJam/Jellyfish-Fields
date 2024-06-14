@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Jogador
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Jogador\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ A\ classe\ Jogador\ representa\ um\ jogador\ no\ jogo.\ \u00C9\ uma\ classe\ abstrata\ que\ define\r\n\ o\ comportamento\ comum\ entre\ os\ jogadores.\r\n\ \r\n\ @autor\ SeuNome\r\n\ @vers\u00E3o\ DataOuVers\u00E3o\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Jogador\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ M\u00E9todo\ act\ \u00E9\ chamado\ repetidamente\ para\ realizar\ as\ a\u00E7\u00F5es\ do\ ator.\r\n
 comment2.params=
 comment2.target=void\ stun()
 comment3.params=

@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=Jellyfish
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Jellyfish\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ A\ classe\ Jellyfish\ representa\ uma\ \u00E1gua-viva\ rosa\ no\ jogo.\r\n\ Ela\ se\ move\ em\ dire\u00E7\u00F5es\ aleat\u00F3rias\ dentro\ do\ mundo.\r\n\ \r\n\ @autor\ SeuNome\r\n\ @vers\u00E3o\ DataOuVers\u00E3o\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Jellyfish\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ M\u00E9todo\ chamado\ em\ cada\ ato\ do\ jogo.\r\n\ Atualiza\ a\ imagem\ e\ movimenta\ a\ \u00E1gua-viva.\r\n
 comment2.params=
 comment2.target=void\ mover()
+comment2.text=\r\n\ Controla\ o\ movimento\ da\ \u00E1gua-viva\ em\ dire\u00E7\u00F5es\ aleat\u00F3rias.\r\n
 comment3.params=
 comment3.target=void\ mudarDirecaoNaBeira()
+comment3.text=\r\n\ Altera\ a\ dire\u00E7\u00E3o\ quando\ a\ \u00E1gua-viva\ atinge\ a\ borda\ do\ mundo.\r\n
 numComments=4

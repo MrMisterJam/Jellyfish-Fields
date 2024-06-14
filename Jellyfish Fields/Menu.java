@@ -1,29 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Menu here.
+ * Classe Menu representa o menu inicial do jogo.
+ * Contém o botão para iniciar o jogo.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @autor SeuNome
+ * @versão DataOuVersão
  */
-public class Menu extends World
-{
+public class Menu extends World {
 
     /**
-     * Constructor for objects of class Menu.
-     * 
+     * Construtor para objetos da classe Menu.
      */
-    public Menu()
-    {    
+    public Menu() {    
         super(1366, 768, 1);
         getBackground().scale(1366, 768);
         prepare();
     }
-    
-    private void prepare() {
 
+    /**
+     * Prepara o menu inicial, adicionando os objetos necessários.
+     */
+    private void prepare() {
         StartButton startButton = new StartButton();
-        addObject(startButton,674,653);
-        startButton.setLocation(688,650);
+        addObject(startButton, 674, 653);
+        startButton.setLocation(688, 650);
     }
 }

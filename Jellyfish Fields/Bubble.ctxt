@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Bubble
+comment0.text=\r\n\ A\ classe\ Bubble\ representa\ uma\ bolha\ que\ se\ move\ em\ um\ padr\u00E3o\ sinusoidal.\r\n\ Quando\ colide\ com\ o\ jogador,\ ele\ \u00E9\ atordoado\ e\ repelido.\r\n\ \r\n\ @autor\ SeuNome\r\n\ @vers\u00E3o\ DataOuVers\u00E3o\r\n
 comment1.params=
 comment1.target=Bubble()
 comment2.params=

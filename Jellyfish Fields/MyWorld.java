@@ -1,133 +1,159 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
+
 /**
- * Write a description of class MyWorld here.
+ * Classe MyWorld representa o mundo do jogo.
+ * É responsável por inicializar e gerenciar os elementos do jogo, incluindo atores e eventos.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @autor SeuNome
+ * @versão DataOuVersão
  */
-public class MyWorld extends World
-{
-    int JellyfishIntervalo = 200;  // Intervalo em ticks para gerar novos atores
+public class MyWorld extends World {
+    // Intervalos para gerar novos atores
+    int JellyfishIntervalo = 200;  
     int BlueJellyfishIntervalo = 600;
-    int timerJ = 0;  // Contador de ticks
+    
+    // Contadores de ticks
+    int timerJ = 0;  
     int timerBJ = 0;
     int contador = 0;
+    
+    // Contadores de pontos e cronômetro
     Counter PontosBob, PontosPatrick, Contagem;
+    
+    // Som do jogo
     GreenfootSound JogoSom = new GreenfootSound("Jogo.mp3");
+    
+    // Controle de eventos especiais
     private boolean squidwardHousePresent = false;
-    private int krabbyPattyIntervalo = 1000;  // Intervalo em atos para gerar novos Krabby Patties
+    private int krabbyPattyIntervalo = 1000;  // Intervalo para gerar novos Krabby Patties
     private int krabbyPattyTimer = 0;  // Contador de atos
+
     /**
-     * Constructor for objects of class MyWorld.
-     * 
+     * Construtor para objetos da classe MyWorld.
      */
-    public MyWorld()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+    public MyWorld() {    
+        // Cria um novo mundo com 1366x768 células, cada uma com 1x1 pixels.
         super(1366, 768, 1);
         prepare();
         JogoSom.setVolume(55);
         JogoSom.playLoop();
-        PontosBob = new Counter("Pontos: ", Color.YELLOW);  // Inicializa o contador com o texto "Score: "
-        addObject(PontosBob, 1200, 50);  // Adiciona o contador ao mundo na posição desejada
-        PontosPatrick = new Counter("Pontos: ", Color.PINK);  // Inicializa o contador com o texto "Score: "
-        addObject(PontosPatrick, 100, 50);  // Adiciona o contador ao mundo na posição desejada
+        
+        // Inicializa contadores de pontos
+        PontosBob = new Counter("Pontos: ", Color.YELLOW);
+        addObject(PontosBob, 1200, 50);
+        
+        PontosPatrick = new Counter("Pontos: ", Color.PINK);
+        addObject(PontosPatrick, 100, 50);
+        
         Contagem = new Counter("", Color.WHITE);
         Contagem.setFontSize(100);
         Contagem.setValue(180);
         addObject(Contagem, 683, 50);
+        
+        // Define a ordem de pintura dos atores
         setPaintOrder(Counter.class, Jogador.class, KrabbyPatty.class, Glasses.class, Bubble.class, Jellyfish.class, BlueJellyfish.class, SquidwardHouse.class, KingJellyfish.class);
     }
-    
+
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * Prepara o mundo para o início do programa.
+     * Cria os objetos iniciais e os adiciona ao mundo.
      */
-    private void prepare()
-    {
-        Jellyfish jellyfish = new Jellyfish();
-        addObject(jellyfish,680,339);
+    private void prepare() {
+        addObject(new Jellyfish(), 680, 339);
         SpongeBob spongeBob = new SpongeBob();
-        addObject(spongeBob,131,638);
+        addObject(spongeBob, 131, 638);
         Patrick patrick = new Patrick();
-        addObject(patrick,1234,614);
-        patrick.setLocation(435,657);
-        spongeBob.setLocation(1227,670);
-        patrick.setLocation(106,683);
-        patrick.setLocation(114,634);
-        spongeBob.setLocation(1199,632);
+        addObject(patrick, 1234, 614);
+        spongeBob.setLocation(1199, 632);
+        patrick.setLocation(114, 634);
     }
-    
+
+    /**
+     * Método chamado em cada ato do jogo.
+     * Atualiza contadores, gera novos atores e verifica eventos.
+     */
     public void act() {
         timerJ++;
         timerBJ++;
         contador++;
         definirJellyfishCooldown();
+        
         if (timerJ >= JellyfishIntervalo) {
-            Jellyfish jellyfish = new Jellyfish();
-            generateActor(jellyfish);
-            timerJ = 0;  // Reseta o contador
+            generateActor(new Jellyfish());
+            timerJ = 0;
         }
+        
         if (timerBJ >= BlueJellyfishIntervalo) {
-            BlueJellyfish jellyfish = new BlueJellyfish();
-            generateActor(jellyfish);
-            timerBJ = 0;  // Reseta o contador
+            generateActor(new BlueJellyfish());
+            timerBJ = 0;
         }
-        // Código para adicionar o SpecialActor
-        if (Greenfoot.getRandomNumber(10000) < 5) { // Chance aleatória de aparecer (ajuste conforme necessário)
-        SquidwardHouseEvent();
+        
+        if (Greenfoot.getRandomNumber(10000) < 5) {
+            SquidwardHouseEvent();
         }
 
-        if (Greenfoot.getRandomNumber(10000) < 5) { // Ajuste a probabilidade conforme necessário
-                SquidwardEvent();
+        if (Greenfoot.getRandomNumber(10000) < 5) {
+            SquidwardEvent();
         }
-            if (Greenfoot.getRandomNumber(7500) < 5) {
-                gerarOculos();
-            }
-            if (Greenfoot.getRandomNumber(10000) < 5) {
-                KingJellyfishEvent();
-            }
         
-        // Verifica se é hora de gerar um novo Krabby Patty
+        if (Greenfoot.getRandomNumber(7500) < 5) {
+            gerarOculos();
+        }
+        
+        if (Greenfoot.getRandomNumber(10000) < 5) {
+            KingJellyfishEvent();
+        }
+        
         if (krabbyPattyTimer >= krabbyPattyIntervalo) {
             gerarKrabbyPatty();
-            krabbyPattyTimer = 0;  // Reinicia o contador
+            krabbyPattyTimer = 0;
         } else {
-            krabbyPattyTimer++;  // Incrementa o contador
+            krabbyPattyTimer++;
         }
+        
         if (contador >= 100) {
             Contagem.decrement();
             contador = 0;
         }
+        
         if (Contagem.getValue() <= 0) {
             Actor vencedor = checarVencendor(PontosBob.getValue(), PontosPatrick.getValue());
             Greenfoot.setWorld(new Fim(vencedor));
         }
-        
     }
+
+    /**
+     * Aumenta os pontos de SpongeBob.
+     */
     void AumentarPontosBob(int valor) {
         PontosBob.aumentar(valor);
     }
+
+    /**
+     * Aumenta os pontos de Patrick.
+     */
     void AumentarPontosPatrick(int valor) {
         PontosPatrick.aumentar(valor);
     }
 
-    // Método para gerar atores sem colisão
+    /**
+     * Gera um ator em uma posição aleatória sem colisão.
+     */
     private void generateActor(Actor ator) {
         int x, y;
         boolean collision;
-
         do {
             x = Greenfoot.getRandomNumber(getWidth());
             y = Greenfoot.getRandomNumber(getHeight());
             collision = checkCollisionAt(ator, x, y);
         } while (collision);
-
         addObject(ator, x, y);
     }
 
-    // Método para verificar colisões em uma posição específica
+    /**
+     * Verifica colisões em uma posição específica.
+     */
     private boolean checkCollisionAt(Actor ator, int x, int y) {
         List<Jogador> jogadores = getObjects(Jogador.class);
         for (Actor jogador : jogadores) {
@@ -138,69 +164,89 @@ public class MyWorld extends World
         return false;
     }
 
-    // Método para verificar se dois atores estão colidindo, com o segundo ator em uma posição específica
+    /**
+     * Verifica se dois atores estão colidindo.
+     */
     private boolean areActorsColliding(Actor a, Actor b, int bX, int bY) {
         int aX = a.getX();
         int aY = a.getY();
-
         int aWidth = a.getImage().getWidth();
         int aHeight = a.getImage().getHeight();
         int bWidth = b.getImage().getWidth();
         int bHeight = b.getImage().getHeight();
+        return Math.abs(aX - bX) < (aWidth + bWidth) / 2 && Math.abs(aY - bY) < (aHeight + bHeight) / 2;
+    }
 
-        return Math.abs(aX - bX) < (aWidth + bWidth) / 2 &&
-               Math.abs(aY - bY) < (aHeight + bHeight) / 2;
-    }
-    
+    /**
+     * Checa o vencedor com base nos pontos.
+     */
     Actor checarVencendor(int pontosBob, int pontosPatrick) {
-        Actor vencedor = null;
         if (pontosBob > pontosPatrick) {
-            vencedor = new SpongeBob();
+            return new SpongeBob();
         } else if (pontosPatrick > pontosBob) {
-            vencedor = new Patrick();
+            return new Patrick();
         }
-        return vencedor;
+        return null;
     }
+
+    /**
+     * Evento da casa do Squidward.
+     */
     private void SquidwardHouseEvent() {
-    if (!squidwardHousePresent) {
-        SquidwardHouse specialActor = new SquidwardHouse(10000); // Ator que fica visível por 10 segundos
-        addObject(specialActor, getWidth() / 2, 0); // Adiciona no topo do mundo
-        squidwardHousePresent = true;
+        if (!squidwardHousePresent) {
+            addObject(new SquidwardHouse(10000), getWidth() / 2, 0);
+            squidwardHousePresent = true;
+        }
     }
-}
-public void setSquidwardHousePresent(boolean present) {
-    squidwardHousePresent = present;
-}
-private void SquidwardEvent() {
-        // Verifica se já existe um Squidward no mundo
+
+    /**
+     * Define se a casa do Squidward está presente.
+     */
+    public void setSquidwardHousePresent(boolean present) {
+        squidwardHousePresent = present;
+    }
+
+    /**
+     * Evento do Squidward.
+     */
+    private void SquidwardEvent() {
         if (getObjects(Squidward.class).isEmpty()) {
-            Squidward squidward = new Squidward(15000);
-            addObject(squidward, getWidth(), getHeight() / 2); // Adiciona no lado direito do mundo
+            addObject(new Squidward(15000), getWidth(), getHeight() / 2);
         }
     }
+
+    /**
+     * Gera um Krabby Patty.
+     */
     private void gerarKrabbyPatty() {
-        KrabbyPatty krabbyPatty = new KrabbyPatty();
-        int x = Greenfoot.getRandomNumber(getWidth() - 400) + 200;  // Posição aleatória no eixo X
-        int y = 0;  // Começa no topo do mundo
-        addObject(krabbyPatty, x, y);  // Adiciona o Krabby Patty ao mundo
+        int x = Greenfoot.getRandomNumber(getWidth() - 400) + 200;
+        addObject(new KrabbyPatty(), x, 0);
     }
+
+    /**
+     * Gera um óculos.
+     */
     private void gerarOculos() {
-        Glasses oculos = new Glasses();
-        int x = Greenfoot.getRandomNumber(getWidth() - 400) + 200;  // Posição aleatória no eixo X
-        int y = 0;  // Começa no topo do mundo
-        addObject(oculos, x, y);
+        int x = Greenfoot.getRandomNumber(getWidth() - 400) + 200;
+        addObject(new Glasses(), x, 0);
     }
+
+    /**
+     * Evento do King Jellyfish.
+     */
     private void KingJellyfishEvent() {
-        
         if (getObjects(KingJellyfish.class).isEmpty()) {
-           KingJellyfish king = new KingJellyfish(15000);
-           addObject(king, getWidth(), getHeight());
+            addObject(new KingJellyfish(15000), getWidth(), getHeight());
         }
     }
+
+    /**
+     * Define o cooldown para gerar Jellyfish.
+     */
     private void definirJellyfishCooldown() {
         if (getObjects(KingJellyfish.class).isEmpty()) {
-           JellyfishIntervalo = 200;
-           BlueJellyfishIntervalo = 600;
+            JellyfishIntervalo = 200;
+            BlueJellyfishIntervalo = 600;
         } else {
             JellyfishIntervalo = 50;
             BlueJellyfishIntervalo = 300;

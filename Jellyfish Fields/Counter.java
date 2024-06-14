@@ -1,10 +1,17 @@
 import greenfoot.*;  // Importa a biblioteca Greenfoot
 
+/**
+ * A classe Counter representa um contador de pontos exibido na tela.
+ * 
+ * @autor SeuNome
+ * @versão DataOuVersão
+ */
 public class Counter extends Actor {
-    private int value = 0;  // Valor do contador
-    private String text;  // Texto exibido
-    int fontSize = 32;  // Tamanho da fonte
+    private int value = 0;
+    private String text;
+    int fontSize = 32;
     Color cor;
+
     // Construtor
     public Counter(String text, Color cor) {
         this.text = text;
@@ -40,8 +47,9 @@ public class Counter extends Actor {
     public int getValue() {
         return value;
     }
-    
-    void setFontSize(int tamanho) {
+
+    // Define o tamanho da fonte
+    public void setFontSize(int tamanho) {
         fontSize = tamanho;
         updateImage();
     }

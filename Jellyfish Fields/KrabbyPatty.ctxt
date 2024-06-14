@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=KrabbyPatty
+comment0.text=\r\n\ A\ classe\ KrabbyPatty\ representa\ um\ hamb\u00FArguer\ que\ cai\ no\ jogo.\r\n\ Ele\ aumenta\ a\ velocidade\ do\ jogador\ temporariamente\ quando\ colidido.\r\n\ \r\n\ @autor\ SeuNome\r\n\ @vers\u00E3o\ DataOuVers\u00E3o\r\n
 comment1.params=
-comment1.target=KrabbyPatty()
-comment2.params=
-comment2.target=void\ act()
-numComments=3
+comment1.target=void\ act()
+comment1.text=\r\n\ M\u00E9todo\ chamado\ em\ cada\ ato\ do\ jogo.\r\n\ Atualiza\ a\ imagem\ e\ movimenta\ o\ hamb\u00FArguer.\r\n
+numComments=2
